@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesia OUD's - Kayu Gaharu Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        body[dir="rtl"] {
+            font-family: 'Amiri', serif;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        body[dir="rtl"] h1,
+        body[dir="rtl"] h2,
+        body[dir="rtl"] h3 {
+            font-family: 'Amiri', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        nav {
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-dropdown {
+            position: relative;
+        }
+        
+        .language-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            min-width: 150px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+        
+        .language-dropdown:hover .language-menu {
+            display: block;
+        }
+        
+        .language-menu button {
+            width: 100%;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            color: white;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .language-menu button:hover {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+        
+        .language-menu button.active {
+            background: rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-slate-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 py-4 px-6 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white">
+                <h1 class="text-2xl font-bold">Indonesian OUD</h1>
+                <p class="text-xs text-amber-400">CV. Indonesian OUD</p>
+            </div>
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href="#home" class="hover:text-amber-400 transition">Home</a>
+                <a href="#about" class="hover:text-amber-400 transition">Tentang</a>
+                <a href="#products" class="hover:text-amber-400 transition">Produk</a>
+                <a href="#benefits" class="hover:text-amber-400 transition">Keunggulan</a>
+                <a href="#contact" class="hover:text-amber-400 transition">Kontak</a>
+            </div>
+            <a href="https://wa.me/6285155417783?text=Halo%20Indonesia%20OUD's,%20saya%20tertarik%20dengan%20produk%20kayu%20gaharu%20Anda" 
+               class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-full transition font-semibold">
+                Order Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10 fade-in visible">
+            <div class="floating mb-8">
+                <i class="fas fa-spa text-amber-400 text-6xl mb-4"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                <span data-translate="hero_title">Kayu Gaharu Premium</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-4">
+                <span data-translate="hero_tagline">Asli Hutan, Berkualitas dan Premium</span>
+            </p>
+            <p class="text-gradient text-3xl md:text-4xl font-bold mb-8">
+                Indonesian OUD
+            </p>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12 text-lg">
+                <span data-translate="hero_description">Gaharu berkualitas tinggi dari hutan Indonesia. Bahan baku parfum premium dan obat herbal dengan aroma khas yang memikat. 
+                Produk alami legal, bersertifikat CITES, dan ramah lingkungan untuk pasar global.</span>
+            </p>
+            <a href="https://wa.me/6285155417783?text=Halo%20CV.%20Indonesian%20OUD,%20saya%20tertarik%20dengan%20produk%20kayu%20gaharu%20Anda" 
+               class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-2xl">
+                <i class="fab fa-whatsapp mr-2"></i> <span data-translate="btn_contact">Hubungi Kami Sekarang</span>
+            </a>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        <span data-translate="about_title">Tentang</span> <span class="text-gradient" data-translate="about_us">Kami</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed" data-translate="about_desc1">
+                        CV. Indonesian OUD adalah perusahaan yang berkomitmen menghadirkan gaharu alami legal dan ramah lingkungan dari hutan Indonesia. 
+                        Kami fokus pada keberlanjutan, legalitas, dan kualitas produk premium untuk pasar global.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed" data-translate="about_desc2">
+                        Dengan sertifikasi CITES dan izin KLHK (Kementerian Lingkungan Hidup dan Kehutanan), kami menjamin setiap produk memiliki legalitas yang terpercaya. 
+                        Target pasar kami adalah industri parfum premium dan ekspor ke Timur Tengah.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">100%</div>
+                            <div class="text-gray-600" data-translate="stat1">Alami</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">A+</div>
+                            <div class="text-gray-600" data-translate="stat2">Kualitas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">24/7</div>
+                            <div class="text-gray-600" data-translate="stat3">Layanan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full bg-amber-400 rounded-2xl"></div>
+                        <img src="https://digitani.ipb.ac.id/wp-content/uploads/2025/02/gaharu-770x400.png" 
+                             alt="Kayu Gaharu" 
+                             class="relative rounded-2xl shadow-2xl w-full h-96 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span data-translate="products_title">Produk</span> <span class="text-gradient" data-translate="products_featured">Unggulan</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-translate="products_desc">
+                    Koleksi gaharu pilihan dengan berbagai grade premium dari Kalimantan dan Papua untuk pasar global
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-64 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-gem text-white text-8xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3" data-translate="grade_super">Grade Super</h3>
+                        <p class="text-gray-600 mb-4" data-translate="grade_super_desc">
+                            Kayu gaharu kualitas super dengan aroma mendalam. Cocok untuk aromaterapi dan kebutuhan spiritual premium.
+                        </p>
+                        <p class="text-amber-600 font-bold text-xl mb-6">Rp 10 - 45 Juta/kg</p>
+                        <a href="https://wa.me/6285155417783?text=Saya%20tertarik%20dengan%20Grade%20Super" 
+                           class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full transition font-semibold w-full text-center">
+                            <i class="fab fa-whatsapp mr-2"></i> <span data-translate="btn_order_now">Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-64 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
+                        <i class="fas fa-award text-white text-8xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3" data-translate="grade_double">Grade Double</h3>
+                        <p class="text-gray-600 mb-4" data-translate="grade_double_desc">
+                            Gaharu grade double dengan kualitas tinggi dan aroma kuat. Pilihan tepat untuk industri parfum premium.
+                        </p>
+                        <p class="text-amber-600 font-bold text-xl mb-6">Rp 45 - 85 Juta/kg</p>
+                        <a href="https://wa.me/6285155417783?text=Saya%20tertarik%20dengan%20Grade%20Double" 
+                           class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full transition font-semibold w-full text-center">
+                            <i class="fab fa-whatsapp mr-2"></i> <span data-translate="btn_order_now">Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-64 bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+                        <i class="fas fa-crown text-white text-8xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3" data-translate="grade_triple">Grade Triple</h3>
+                        <p class="text-gray-600 mb-4" data-translate="grade_triple_desc">
+                            Grade triple dari Kalimantan dan Papua. Kualitas super premium untuk pasar ekspor Timur Tengah.
+                        </p>
+                        <p class="text-amber-600 font-bold text-xl mb-6">Rp 85 - 120 Juta/kg</p>
+                        <a href="https://wa.me/6285155417783?text=Saya%20tertarik%20dengan%20Grade%20Triple" 
+                           class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full transition font-semibold w-full text-center">
+                            <i class="fab fa-whatsapp mr-2"></i> <span data-translate="btn_order_now">Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in border-4 border-amber-400">
+                    <div class="h-64 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center relative">
+                        <i class="fas fa-star text-white text-8xl"></i>
+                        <div class="absolute top-4 right-4 bg-amber-400 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            RARE
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3" data-translate="grade_rare">Grade Rare</h3>
+                        <p class="text-gray-600 mb-4" data-translate="grade_rare_desc">
+                            Grade tertinggi dan paling langka dari Papua. Eksklusif untuk kolektor dan pasar luxury global.
+                        </p>
+                        <p class="text-amber-600 font-bold text-xl mb-6">Rp 135 - 200 Juta/kg</p>
+                        <a href="https://wa.me/6285155417783?text=Saya%20tertarik%20dengan%20Grade%20Rare" 
+                           class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full transition font-semibold w-full text-center">
+                            <i class="fab fa-whatsapp mr-2"></i> <span data-translate="btn_order_now">Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span data-translate="benefits_title">Mengapa Memilih</span> <span class="text-gradient" data-translate="benefits_us">Kami?</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-translate="benefits_desc">
+                    Kepercayaan dan kepuasan pelanggan adalah prioritas utama kami
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-certificate text-amber-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-translate="benefit1_title">Bersertifikat Legal</h3>
+                    <p class="text-gray-600" data-translate="benefit1_desc">
+                        Produk kami dilengkapi sertifikasi CITES dan izin KLHK yang menjamin legalitas ekspor
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-translate="benefit2_title">Ramah Lingkungan</h3>
+                    <p class="text-gray-600" data-translate="benefit2_desc">
+                        Berbasis keberlanjutan dengan budidaya organik dan inokulasi modern yang ramah lingkungan
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe text-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-translate="benefit3_title">Jaringan Ekspor B2B</h3>
+                    <p class="text-gray-600" data-translate="benefit3_desc">
+                        Distribusi langsung ke industri parfum dan pasar Timur Tengah melalui agen ekspor terpercaya
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-purple-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-translate="benefit4_title">Kualitas Premium</h3>
+                    <p class="text-gray-600" data-translate="benefit4_desc">
+                        Gaharu alami dari hutan produksi dengan proses panen, sortir, dan pengolahan oleh tenaga ahli
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-20 hero-gradient">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <span data-translate="testimonial_title">Apa Kata</span> <span class="text-amber-400" data-translate="testimonial_customers">Pelanggan</span>
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto" data-translate="testimonial_desc">
+                    Kepuasan pelanggan adalah kebanggaan kami
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-effect p-8 rounded-2xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold" data-translate="testi1_name">Industri Parfum</h4>
+                            <div class="text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300" data-translate="testi1_text">
+                        "Kualitas gaharu dari CV. Indonesian OUD sangat konsisten untuk produksi parfum premium kami. Aroma natural dan tahan lama."
+                    </p>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-2xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold" data-translate="testi2_name">Eksportir Timur Tengah</h4>
+                            <div class="text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300" data-translate="testi2_text">
+                        "Partnership yang solid dengan legalitas lengkap. Sertifikasi CITES memudahkan proses ekspor ke pasar global kami."
+                    </p>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-2xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold" data-translate="testi3_name">Kolektor Premium</h4>
+                            <div class="text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300" data-translate="testi3_text">
+                        "Grade Rare Papua adalah yang terbaik. Investasi bernilai tinggi dengan kualitas yang tidak diragukan lagi."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Siap Memesan <span class="text-gradient">Sekarang?</span>
+                </h2>
+                <p class="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
+                    Hubungi kami melalui WhatsApp untuk konsultasi gratis dan penawaran terbaik. 
+                    Kami melayani penjualan langsung, ekspor B2B, dan kerjasama dengan layanan eksklusif.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fab fa-whatsapp text-green-500 text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">WhatsApp</h4>
+                        <p class="text-gray-600">+62 851-5541-7783</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fas fa-envelope text-amber-500 text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Email</h4>
+                        <p class="text-gray-600">info@indonesiaoud.com</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fas fa-map-marker-alt text-blue-500 text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Lokasi</h4>
+                        <p class="text-gray-600">Indonesia</p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/6285155417783?text=Halo%20CV.%20Indonesian%20OUD,%20saya%20tertarik%20dengan%20produk%20kayu%20gaharu%20Anda" 
+                   class="inline-block bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-12 py-5 rounded-full text-xl font-semibold transition transform hover:scale-105 shadow-2xl">
+                    <i class="fab fa-whatsapp mr-3"></i> Chat via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hero-gradient py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Indonesian OUD</h3>
+                    <p class="text-gray-400" data-translate="footer_desc">
+                        CV. Indonesian OUD - Gaharu alami legal & ramah lingkungan dari hutan Indonesia untuk pasar global.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4" data-translate="footer_nav">Navigasi</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-amber-400 transition" data-translate="nav_home">Home</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition" data-translate="nav_about">Tentang</a></li>
+                        <li><a href="#products" class="hover:text-amber-400 transition" data-translate="nav_products">Produk</a></li>
+                        <li><a href="#benefits" class="hover:text-amber-400 transition" data-translate="nav_benefits">Keunggulan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4" data-translate="footer_products">Produk</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#products" class="hover:text-amber-400 transition" data-translate="grade_super">Grade Super</a></li>
+                        <li><a href="#products" class="hover:text-amber-400 transition" data-translate="grade_double">Grade Double</a></li>
+                        <li><a href="#products" class="hover:text-amber-400 transition" data-translate="grade_triple">Grade Triple</a></li>
+                        <li><a href="#products" class="hover:text-amber-400 transition" data-translate="grade_rare">Grade Rare</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4" data-translate="footer_contact">Hubungi Kami</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fab fa-whatsapp mr-2"></i> +62 851-5541-7783</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@indonesianoud.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CV. Indonesian OUD. <span data-translate="footer_rights">All rights reserved. | Asli Hutan, Berkualitas dan Premium</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285155417783?text=Halo%20CV.%20Indonesian%20OUD,%20saya%20tertarik%20dengan%20produk%20kayu%20gaharu%20Anda" 
+       class="whatsapp-float bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Language translations
+        const translations = {
+            id: {
+                nav_home: "Home",
+                nav_about: "Tentang",
+                nav_products: "Produk",
+                nav_benefits: "Keunggulan",
+                nav_contact: "Kontak",
+                btn_order: "Order Now",
+                hero_title: "Kayu Gaharu Premium",
+                hero_tagline: "Asli Hutan, Berkualitas dan Premium",
+                hero_description: "Gaharu berkualitas tinggi dari hutan Indonesia. Bahan baku parfum premium dan obat herbal dengan aroma khas yang memikat. Produk alami legal, bersertifikat CITES, dan ramah lingkungan untuk pasar global.",
+                btn_contact: "Hubungi Kami Sekarang",
+                about_title: "Tentang",
+                about_us: "Kami",
+                about_desc1: "CV. Indonesian OUD adalah perusahaan yang berkomitmen menghadirkan gaharu alami legal dan ramah lingkungan dari hutan Indonesia. Kami fokus pada keberlanjutan, legalitas, dan kualitas produk premium untuk pasar global.",
+                about_desc2: "Dengan sertifikasi CITES dan izin KLHK (Kementerian Lingkungan Hidup dan Kehutanan), kami menjamin setiap produk memiliki legalitas yang terpercaya. Target pasar kami adalah industri parfum premium dan ekspor ke Timur Tengah.",
+                stat1: "Alami",
+                stat2: "Kualitas",
+                stat3: "Layanan",
+                products_title: "Produk",
+                products_featured: "Unggulan",
+                products_desc: "Koleksi gaharu pilihan dengan berbagai grade premium dari Kalimantan dan Papua untuk pasar global",
+                grade_super: "Grade Super",
+                grade_super_desc: "Kayu gaharu kualitas super dengan aroma mendalam. Cocok untuk aromaterapi dan kebutuhan spiritual premium.",
+                grade_double: "Grade Double",
+                grade_double_desc: "Gaharu grade double dengan kualitas tinggi dan aroma kuat. Pilihan tepat untuk industri parfum premium.",
+                grade_triple: "Grade Triple",
+                grade_triple_desc: "Grade triple dari Kalimantan dan Papua. Kualitas super premium untuk pasar ekspor Timur Tengah.",
+                grade_rare: "Grade Rare",
+                grade_rare_desc: "Grade tertinggi dan paling langka dari Papua. Eksklusif untuk kolektor dan pasar luxury global.",
+                btn_order_now: "Pesan Sekarang",
+                benefits_title: "Mengapa Memilih",
+                benefits_us: "Kami?",
+                benefits_desc: "Kepercayaan dan kepuasan pelanggan adalah prioritas utama kami",
+                benefit1_title: "Bersertifikat Legal",
+                benefit1_desc: "Produk kami dilengkapi sertifikasi CITES dan izin KLHK yang menjamin legalitas ekspor",
+                benefit2_title: "Ramah Lingkungan",
+                benefit2_desc: "Berbasis keberlanjutan dengan budidaya organik dan inokulasi modern yang ramah lingkungan",
+                benefit3_title: "Jaringan Ekspor B2B",
+                benefit3_desc: "Distribusi langsung ke industri parfum dan pasar Timur Tengah melalui agen ekspor terpercaya",
+                benefit4_title: "Kualitas Premium",
+                benefit4_desc: "Gaharu alami dari hutan produksi dengan proses panen, sortir, dan pengolahan oleh tenaga ahli",
+                testimonial_title: "Apa Kata",
+                testimonial_customers: "Pelanggan",
+                testimonial_desc: "Kepuasan pelanggan adalah kebanggaan kami",
+                testi1_name: "Industri Parfum",
+                testi1_text: "Kualitas gaharu dari CV. Indonesian OUD sangat konsisten untuk produksi parfum premium kami. Aroma natural dan tahan lama.",
+                testi2_name: "Eksportir Timur Tengah",
+                testi2_text: "Partnership yang solid dengan legalitas lengkap. Sertifikasi CITES memudahkan proses ekspor ke pasar global kami.",
+                testi3_name: "Kolektor Premium",
+                testi3_text: "Grade Rare Papua adalah yang terbaik. Investasi bernilai tinggi dengan kualitas yang tidak diragukan lagi.",
+                contact_title: "Siap Memesan",
+                contact_now: "Sekarang?",
+                contact_desc: "Hubungi kami melalui WhatsApp untuk konsultasi gratis dan penawaran terbaik. Kami melayani penjualan langsung, ekspor B2B, dan kerjasama dengan layanan eksklusif.",
+                contact_wa: "WhatsApp",
+                contact_email: "Email",
+                contact_location: "Lokasi",
+                btn_chat: "Chat via WhatsApp",
+                footer_desc: "CV. Indonesian OUD - Gaharu alami legal & ramah lingkungan dari hutan Indonesia untuk pasar global.",
+                footer_nav: "Navigasi",
+                footer_products: "Produk",
+                footer_contact: "Hubungi Kami",
+                footer_rights: "All rights reserved. | Asli Hutan, Berkualitas dan Premium"
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_products: "Products",
+                nav_benefits: "Benefits",
+                nav_contact: "Contact",
+                btn_order: "Order Now",
+                hero_title: "Premium Agarwood",
+                hero_tagline: "Natural Forest, Quality and Premium",
+                hero_description: "High-quality agarwood from Indonesian forests. Premium perfume raw materials and herbal medicine with a distinctive captivating aroma. Legal natural products, CITES certified, and environmentally friendly for the global market.",
+                btn_contact: "Contact Us Now",
+                about_title: "About",
+                about_us: "Us",
+                about_desc1: "CV. Indonesian OUD is a company committed to providing legal and environmentally friendly natural agarwood from Indonesian forests. We focus on sustainability, legality, and premium product quality for the global market.",
+                about_desc2: "With CITES certification and KLHK (Ministry of Environment and Forestry) permits, we guarantee that every product has trusted legality. Our target market is the premium perfume industry and exports to the Middle East.",
+                stat1: "Natural",
+                stat2: "Quality",
+                stat3: "Service",
+                products_title: "Featured",
+                products_featured: "Products",
+                products_desc: "Premium grade agarwood collection from Kalimantan and Papua for the global market",
+                grade_super: "Super Grade",
+                grade_super_desc: "Super quality agarwood with deep aroma. Suitable for aromatherapy and premium spiritual needs.",
+                grade_double: "Double Grade",
+                grade_double_desc: "Double grade agarwood with high quality and strong aroma. Perfect choice for premium perfume industry.",
+                grade_triple: "Triple Grade",
+                grade_triple_desc: "Triple grade from Kalimantan and Papua. Super premium quality for Middle East export market.",
+                grade_rare: "Rare Grade",
+                grade_rare_desc: "The highest and rarest grade from Papua. Exclusive for collectors and global luxury market.",
+                btn_order_now: "Order Now",
+                benefits_title: "Why Choose",
+                benefits_us: "Us?",
+                benefits_desc: "Customer trust and satisfaction are our top priorities",
+                benefit1_title: "Legally Certified",
+                benefit1_desc: "Our products are equipped with CITES certification and KLHK permits that guarantee export legality",
+                benefit2_title: "Environmentally Friendly",
+                benefit2_desc: "Sustainability-based with organic cultivation and modern environmentally friendly inoculation",
+                benefit3_title: "B2B Export Network",
+                benefit3_desc: "Direct distribution to perfume industry and Middle East market through trusted export agents",
+                benefit4_title: "Premium Quality",
+                benefit4_desc: "Natural agarwood from production forests with harvesting, sorting, and processing by experts",
+                testimonial_title: "What Our",
+                testimonial_customers: "Customers Say",
+                testimonial_desc: "Customer satisfaction is our pride",
+                testi1_name: "Perfume Industry",
+                testi1_text: "The quality of agarwood from CV. Indonesian OUD is very consistent for our premium perfume production. Natural and long-lasting aroma.",
+                testi2_name: "Middle East Exporter",
+                testi2_text: "Solid partnership with complete legality. CITES certification facilitates the export process to our global market.",
+                testi3_name: "Premium Collector",
+                testi3_text: "Papua Rare Grade is the best. High-value investment with unquestionable quality.",
+                contact_title: "Ready to Order",
+                contact_now: "Now?",
+                contact_desc: "Contact us via WhatsApp for free consultation and best offers. We serve direct sales, B2B exports, and partnerships with exclusive services.",
+                contact_wa: "WhatsApp",
+                contact_email: "Email",
+                contact_location: "Location",
+                btn_chat: "Chat via WhatsApp",
+                footer_desc: "CV. Indonesian OUD - Legal & environmentally friendly natural agarwood from Indonesian forests for the global market.",
+                footer_nav: "Navigation",
+                footer_products: "Products",
+                footer_contact: "Contact Us",
+                footer_rights: "All rights reserved. | Natural Forest, Quality and Premium"
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_about: "من نحن",
+                nav_products: "المنتجات",
+                nav_benefits: "المزايا",
+                nav_contact: "اتصل بنا",
+                btn_order: "اطلب الآن",
+                hero_title: "خشب العود الفاخر",
+                hero_tagline: "طبيعي من الغابات، جودة عالية وفاخر",
+                hero_description: "خشب عود عالي الجودة من غابات إندونيسيا. مواد خام للعطور الفاخرة والأدوية العشبية برائحة مميزة جذابة. منتجات طبيعية قانونية، معتمدة من CITES، وصديقة للبيئة للسوق العالمي.",
+                btn_contact: "اتصل بنا الآن",
+                about_title: "من",
+                about_us: "نحن",
+                about_desc1: "CV. Indonesian OUD هي شركة ملتزمة بتوفير خشب العود الطبيعي القانوني والصديق للبيئة من غابات إندونيسيا. نحن نركز على الاستدامة والشرعية وجودة المنتج الفاخر للسوق العالمي.",
+                about_desc2: "مع شهادة CITES وتصاريح KLHK (وزارة البيئة والغابات)، نضمن أن كل منتج له شرعية موثوقة. سوقنا المستهدف هو صناعة العطور الفاخرة والتصدير إلى الشرق الأوسط.",
+                stat1: "طبيعي",
+                stat2: "جودة",
+                stat3: "خدمة",
+                products_title: "المنتجات",
+                products_featured: "المميزة",
+                products_desc: "مجموعة من خشب العود الفاخر بدرجات مختلفة من كاليمانتان وبابوا للسوق العالمي",
+                grade_super: "درجة سوبر",
+                grade_super_desc: "خشب عود بجودة سوبر مع رائحة عميقة. مناسب للعلاج بالروائح والاحتياجات الروحية الفاخرة.",
+                grade_double: "درجة مزدوجة",
+                grade_double_desc: "خشب عود بدرجة مزدوجة بجودة عالية ورائحة قوية. الخيار المثالي لصناعة العطور الفاخرة.",
+                grade_triple: "درجة ثلاثية",
+                grade_triple_desc: "درجة ثلاثية من كاليمانتان وبابوا. جودة فائقة لسوق التصدير في الشرق الأوسط.",
+                grade_rare: "درجة نادرة",
+                grade_rare_desc: "أعلى وأندر درجة من بابوا. حصرية للهواة والسوق الفاخر العالمي.",
+                btn_order_now: "اطلب الآن",
+                benefits_title: "لماذا تختار",
+                benefits_us: "نا؟",
+                benefits_desc: "ثقة العملاء ورضاهم هي أولويتنا القصوى",
+                benefit1_title: "معتمد قانونياً",
+                benefit1_desc: "منتجاتنا مجهزة بشهادة CITES وتصاريح KLHK التي تضمن شرعية التصدير",
+                benefit2_title: "صديق للبيئة",
+                benefit2_desc: "قائم على الاستدامة مع الزراعة العضوية والتلقيح الحديث الصديق للبيئة",
+                benefit3_title: "شبكة تصدير B2B",
+                benefit3_desc: "توزيع مباشر لصناعة العطور وسوق الشرق الأوسط من خلال وكلاء تصدير موثوقين",
+                benefit4_title: "جودة فاخرة",
+                benefit4_desc: "خشب عود طبيعي من غابات الإنتاج مع عملية الحصاد والفرز والمعالجة من قبل الخبراء",
+                testimonial_title: "ماذا يقول",
+                testimonial_customers: "عملاؤنا",
+                testimonial_desc: "رضا العملاء هو فخرنا",
+                testi1_name: "صناعة العطور",
+                testi1_text: "جودة خشب العود من CV. Indonesian OUD متسقة جداً لإنتاج العطور الفاخرة لدينا. رائحة طبيعية وتدوم طويلاً.",
+                testi2_name: "مصدر الشرق الأوسط",
+                testi2_text: "شراكة قوية مع شرعية كاملة. شهادة CITES تسهل عملية التصدير إلى سوقنا العالمي.",
+                testi3_name: "هاوي فاخر",
+                testi3_text: "درجة نادرة من بابوا هي الأفضل. استثمار بقيمة عالية مع جودة لا يمكن الشك فيها.",
+                contact_title: "جاهز للطلب",
+                contact_now: "الآن؟",
+                contact_desc: "اتصل بنا عبر واتساب للحصول على استشارة مجانية وأفضل العروض. نحن نخدم المبيعات المباشرة والصادرات B2B والشراكات مع الخدمات الحصرية.",
+                contact_wa: "واتساب",
+                contact_email: "البريد الإلكتروني",
+                contact_location: "الموقع",
+                btn_chat: "دردشة عبر واتساب",
+                footer_desc: "CV. Indonesian OUD - خشب عود طبيعي قانوني وصديق للبيئة من غابات إندونيسيا للسوق العالمي.",
+                footer_nav: "التنقل",
+                footer_products: "المنتجات",
+                footer_contact: "اتصل بنا",
+                footer_rights: "جميع الحقوق محفوظة. | طبيعي من الغابات، جودة عالية وفاخر"
+            }
+        };
+
+        let currentLang = 'id';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update current language display
+            const langNames = {
+                'id': 'Indonesia',
+                'en': 'English',
+                'ar': 'العربية'
+            };
+            document.getElementById('current-lang').textContent = langNames[lang];
+            
+            // Update text direction for Arabic
+            if (lang === 'ar') {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.setAttribute('dir', 'ltr');
+            }
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language') || 'id';
+            changeLanguage(savedLang);
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Navbar Scroll Effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
