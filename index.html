@@ -112,45 +112,128 @@
         
         .language-dropdown {
             position: relative;
+            display: inline-block;
+        }
+        
+        .language-btn-trigger {
+            cursor: pointer;
+            font-size: 14px;
         }
         
         .language-menu {
             display: none;
             position: absolute;
-            top: 100%;
+            top: calc(100% + 8px);
             right: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 0.5rem;
-            margin-top: 0.5rem;
-            min-width: 150px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            z-index: 100;
+            background: #1e293b;
+            border-radius: 12px;
+            min-width: 200px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+            overflow: hidden;
+            border: 1px solid #334155;
         }
         
         .language-dropdown:hover .language-menu {
             display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .language-menu button {
             width: 100%;
             text-align: left;
-            padding: 0.75rem 1rem;
+            padding: 12px 20px;
             color: white;
-            transition: all 0.3s;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 12px;
+            font-size: 15px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 500;
         }
         
         .language-menu button:hover {
-            background: rgba(245, 158, 11, 0.2);
-            color: #f59e0b;
+            background: #334155;
+            color: #fbbf24;
         }
         
         .language-menu button.active {
-            background: rgba(245, 158, 11, 0.3);
-            color: #f59e0b;
+            background: #334155;
+            color: #fbbf24;
+            border-left: 3px solid #fbbf24;
+        }
+        
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            background: #1e293b;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-card:hover .gallery-image {
+            transform: scale(1.15);
+            filter: brightness(0.7);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+            padding: 30px;
+            transform: translateY(100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+        
+        .gallery-card:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .gallery-content {
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+        }
+        
+        .gallery-card:hover .gallery-content {
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -342,8 +425,114 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span data-translate="gallery_title">Galeri</span> <span class="text-gradient" data-translate="gallery_collection">Koleksi Kami</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-translate="gallery_desc">
+                    Lihat koleksi kayu gaharu premium kami dari berbagai grade dan asal daerah
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-card group fade-in">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/IMG1.jpeg" 
+                             alt="Gaharu Grade Super" 
+                             class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">Gaharu Grade Super</h3>
+                                <p class="text-gray-200">Aroma kuat dan konsisten</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-card group fade-in">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/IMG2.jpeg" 
+                             alt="Gaharu Kalimantan" 
+                             class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">Gaharu Kalimantan</h3>
+                                <p class="text-gray-200">Kualitas premium dari Kalimantan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-card group fade-in">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/IMG3.jpeg" 
+                             alt="Gaharu Papua" 
+                             class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">Gaharu Papua</h3>
+                                <p class="text-gray-200">Grade rare eksklusif</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-card group fade-in">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/IMG4.jpeg" 
+                             alt="Proses Sortir" 
+                             class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">Minyak Gaharu</h3>
+                                <p class="text-gray-200">Minyak murni tanpa campuran</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-card group fade-in">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/IMG5.jpeg" 
+                             alt="Grade Triple" 
+                             class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">Grade Triple</h3>
+                                <p class="text-gray-200">Super premium untuk ekspor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-card group fade-in">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/IMG6.jpeg" 
+                             alt="Packaging Premium" 
+                             class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3 class="text-2xl font-bold text-white mb-2">Patern Rare</h3>
+                                <p class="text-gray-200">Kayu dengan berkualitas tinggi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Benefits Section -->
-    <section id="benefits" class="py-20 bg-white">
+    <section id="benefits" class="py-20 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -594,6 +783,9 @@
                 products_title: "Produk",
                 products_featured: "Unggulan",
                 products_desc: "Koleksi gaharu pilihan dengan berbagai grade premium dari Kalimantan dan Papua untuk pasar global",
+                gallery_title: "Galeri",
+                gallery_collection: "Koleksi Kami",
+                gallery_desc: "Lihat koleksi kayu gaharu premium kami dari berbagai grade dan asal daerah",
                 grade_super: "Grade Super",
                 grade_super_desc: "Kayu gaharu kualitas super dengan aroma mendalam. Cocok untuk aromaterapi dan kebutuhan spiritual premium.",
                 grade_double: "Grade Double",
@@ -657,6 +849,9 @@
                 products_title: "Featured",
                 products_featured: "Products",
                 products_desc: "Premium grade agarwood collection from Kalimantan and Papua for the global market",
+                gallery_title: "Our",
+                gallery_collection: "Gallery",
+                gallery_desc: "View our premium agarwood collection from various grades and regions",
                 grade_super: "Super Grade",
                 grade_super_desc: "Super quality agarwood with deep aroma. Suitable for aromatherapy and premium spiritual needs.",
                 grade_double: "Double Grade",
@@ -769,13 +964,13 @@
         function changeLanguage(lang) {
             currentLang = lang;
             
-            // Update current language display
-            const langNames = {
-                'id': 'Indonesia',
-                'en': 'English',
-                'ar': 'العربية'
+            // Update current language display with short codes
+            const langCodes = {
+                'id': 'ID',
+                'en': 'EN',
+                'ar': 'AR'
             };
-            document.getElementById('current-lang').textContent = langNames[lang];
+            document.getElementById('current-lang').textContent = langCodes[lang];
             
             // Update text direction for Arabic
             if (lang === 'ar') {
